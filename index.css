@@ -9,7 +9,7 @@ nav{
     justify-items: center;
     align-items: center;
     grid-template-columns:repeat(4,1fr) ;
-    background-color: rgb(255, 155, 255);
+    background: linear-gradient(0deg, rgb(183, 0, 255),rgb(203, 72, 255));
     height: 50px;
 }
 .Link{
