@@ -131,13 +131,33 @@ section{
     grid-template-columns:repeat(10,1fr);
     grid-template-rows:15vh repeat(1,40vh) 15vh ;
 }
-@media only screen and (max-width: 650px) {
+.AboutMeText{
+    color: black;
+    font-weight: 500;
+    font-size: 2.5vh;
+}
+@media only screen and (max-width: 870px) {
     nav{
         height: 13vh;
+    }
+    section{
+        grid-template-columns:repeat(3,4fr);
+        grid-template-rows:repeat(1,20vh) 50px 20vh 30vh;
     }
     .infoTextBar{
         grid-template-columns:repeat(3,1fr);
         grid-template-rows: repeat(2,1fr);
         height: 24vh;
+    }
+    .CloseToUpper{
+        margin: 10px;
+        font-size: 4vh;
+    }
+    .UpperText{
+        margin: 7px;
+        font-size: 6vh;
+    }
+    .infoText{
+        font-size: 1.75vh;
     }
 }
