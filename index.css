@@ -41,6 +41,7 @@ nav{
 footer{
     background: linear-gradient(180deg, rgb(221, 221, 221),rgb(171, 160, 175));
     display: grid;
+    grid-template-rows:repeat(4,1fr) ;
     grid-template-columns:repeat(4,1fr) ;
     height: 9vh;
     justify-items: center;
@@ -56,7 +57,7 @@ footer{
     color:black;
     margin: 5px;
 }
-img{
+.ProfileImige{
     object-fit: cover;
     width: 100%; 
     height: 100%;
@@ -89,6 +90,7 @@ section{
   background-image: linear-gradient(90deg, rgb(191, 30, 255),rgb(203, 72, 255));
   background-size: 100%;
   background-repeat: repeat;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
@@ -136,6 +138,55 @@ section{
     font-weight: 500;
     font-size: 2.5vh;
 }
+.Projects{
+    display: grid;
+    background-color: gainsboro;
+    grid-template-columns:15px repeat(4,1fr) 15px;
+    grid-template-rows:repeat(3,1fr) ;
+}
+.ProjectImg{
+    margin: 15px;
+    height: 15rem;
+    width: 15rem; 
+}
+.ProjectImg1{
+    grid-row: 1 / 1;
+    grid-column: 4 / 4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.ProjectImg2{
+    grid-row: 2 / 2;
+    grid-column: 4 / 4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.ProjectImg3{
+    grid-row: 3 / 3;
+    grid-column: 4 / 4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.ProjectText{
+    font-weight: 500;
+    margin: 15px;
+    font-size: 1.1rem;
+}
+.ProjectText1{
+    grid-row: 1 / 1;
+    grid-column: 3 / 3;
+}
+.ProjectText2{
+    grid-row: 2 / 2;
+    grid-column: 3 / 3;
+}
+.ProjectText3{
+    grid-row: 3 / 3;
+    grid-column: 3 / 3;
+}
 @media only screen and (max-width: 870px) {
     nav{
         height: 13vh;
@@ -159,5 +210,15 @@ section{
     }
     .infoText{
         font-size: 1.75vh;
+    }
+    .ProjectText{
+        font-weight: 400;
+        margin: 10px;
+        font-size: 1.1rem;
+    }
+    .ProjectImg{
+        margin: 10px;
+        height: 10rem;
+        width: 10rem; 
     }
 }
