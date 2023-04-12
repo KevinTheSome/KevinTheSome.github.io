@@ -43,12 +43,16 @@ footer{
     display: grid;
     grid-template-rows:repeat(4,1fr) ;
     grid-template-columns:repeat(4,1fr) ;
-    height: 9vh;
+    height: 18vh;
     justify-items: center;
     align-items: center;
 }
 .Bottomtext{
     color: gray;
+    margin: 10px;
+}
+.AboutMeInfo{
+    margin: 10px;
 }
 .changeL{
     font-weight: 600;
@@ -172,7 +176,7 @@ section{
 }
 .ProjectText{
     font-weight: 500;
-    margin: 15px;
+    margin: 25px;
     font-size: 1.1rem;
 }
 .ProjectText1{
@@ -220,5 +224,25 @@ section{
         margin: 10px;
         height: 10rem;
         width: 10rem; 
+    }
+    .FactsSectione{
+        grid-template-rows:repeat(3,1fr) 50px;
+    }
+    .img{
+        grid-row: 3 / 3;
+        grid-column: 4 / 4;
+        border-radius: 5px;
+        margin: 10px;
+        width: 300px; 
+        height: 300px;
+        margin-left: 50px;
+    }
+    footer{
+        height: 60vh; 
+        grid-template-rows:repeat(4,1fr) ;
+        grid-template-columns:repeat(1,1fr) ;
+    }
+    .AboutMeInfo{
+        grid-row: 4/4;
     }
 }
