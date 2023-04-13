@@ -9,17 +9,18 @@ body{
     font-weight: 400;
     margin: 0;
 }
-nav{
+.TopNavBar{
     display: grid;    
     justify-items: center;
     align-items: center;
     grid-template-columns:repeat(7,1fr) ;
     background: linear-gradient(0deg, rgb(183, 0, 255),rgb(203, 72, 255));
     height: 9vh;
-}
-.TopNavBar{
     position: sticky;
     top: 0px;
+}
+.TopNavMobile{
+    display: none;
 }
 .UpperText{
     margin: 10px;
@@ -43,7 +44,7 @@ footer{
     display: grid;
     grid-template-rows:repeat(4,1fr) ;
     grid-template-columns:repeat(4,1fr) ;
-    height: 18vh;
+    height: 24vh;
     justify-items: center;
     align-items: center;
 }
@@ -71,7 +72,6 @@ footer{
 }
 section{
     display: grid;
-    flex-direction: row;
     grid-template-columns:repeat(3,4fr);
     grid-template-rows:repeat(1,20vh) 1vh 20vh 45vh;
 }
@@ -147,6 +147,7 @@ section{
     background-color: gainsboro;
     grid-template-columns:15px repeat(4,1fr) 15px;
     grid-template-rows:repeat(3,1fr) ;
+    padding: 5px;
 }
 .ProjectImg{
     margin: 15px;
@@ -192,8 +193,60 @@ section{
     grid-column: 3 / 3;
 }
 @media only screen and (max-width: 870px) {
-    nav{
-        height: 13vh;
+    .TopNavBar{
+        display: none;
+    }
+    .TopNavMobile{
+        display: grid;
+        grid-template-rows:repeat(1,1fr) ;
+        background: linear-gradient(0deg, rgb(183, 0, 255),rgb(203, 72, 255));
+        justify-items: right;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        height: 9vh;
+    }
+    .UnderTopNavMobile{
+        display: none;
+        overflow: hidden;
+    }
+    #Toggel:checked ~.UnderTopNavMobile{
+        display: flex;
+        background: linear-gradient(0deg, rgb(183, 0, 255),rgb(203, 72, 255));
+        position: sticky;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        top: 50%;
+        height: 40vh;
+    }
+    .MobileCheckbox{
+        grid-row: 1/1;
+        grid-column: 1/1;
+        display: none;
+    }
+    .TopNavMobileOpenIcon{
+        grid-row: 1/1;
+        grid-column: 1/1;
+        margin-right: 15px;
+    }
+    .TopNavMobileCloseIcon{
+        grid-row: 1/1;
+        grid-column: 1/1;
+        margin-right: 15px;
+        margin-top: 15px;
+        display: none;
+    }
+    #Toggel:checked ~ label .TopNavMobileCloseIcon{
+        display: grid; 
+        scale: 1.2;
+        animation: rotation 0.5s;
+    }
+    #Toggel:checked ~label .TopNavMobileOpenIcon{
+        display: none; 
+        scale: 1.2;
+        animation: rotation 0.5s;
     }
     section{
         grid-template-columns:repeat(3,4fr);
@@ -226,7 +279,8 @@ section{
         width: 10rem; 
     }
     .FactsSectione{
-        grid-template-rows:repeat(3,1fr) 50px;
+        grid-template-rows:repeat(3,1fr) 15px;
+        grid-template-columns:repeat(7,1fr);
     }
     .img{
         grid-row: 3 / 3;
@@ -244,5 +298,15 @@ section{
     }
     .AboutMeInfo{
         grid-row: 4/4;
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+        scale: 0.9;
+    }
+    to{
+        transform: rotate(180deg);
+        scale: 1.2;
     }
 }
