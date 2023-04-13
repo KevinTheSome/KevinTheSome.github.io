@@ -1,5 +1,8 @@
 *{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
 }
 html {
     scroll-behavior: smooth;
@@ -201,14 +204,16 @@ section{
         grid-template-rows:repeat(1,1fr) ;
         background: linear-gradient(0deg, rgb(183, 0, 255),rgb(203, 72, 255));
         justify-items: right;
-        align-items: center;
         position: sticky;
         top: 0px;
         height: 9vh;
+        transition: all 1.5s ease;
     }
     .UnderTopNavMobile{
-        display: none;
+        opacity: 0;
         overflow: hidden;
+        transform: translateY(-900px);
+        transition: all 1s ease;
     }
     #Toggel:checked ~.UnderTopNavMobile{
         display: flex;
@@ -220,6 +225,9 @@ section{
         width: 100%;
         top: 50%;
         height: 40vh;
+        transform: translateY(0%);
+        opacity: 1;
+        transition: all 1s ease;
     }
     .MobileCheckbox{
         grid-row: 1/1;
@@ -242,11 +250,23 @@ section{
         display: grid; 
         scale: 1.2;
         animation: rotation 0.5s;
+        transition: all 1s ease-out;
     }
     #Toggel:checked ~label .TopNavMobileOpenIcon{
         display: none; 
         scale: 1.2;
         animation: rotation 0.5s;
+        animation-direction: reverse;
+        transition: all 1s ease-out;
+    }
+    .Link{
+        gap: 15px;
+        font-size: 2vh;
+    }
+    .changeL{
+        gap: 15px;
+        margin-top: 15px;
+        font-size: 2vh;
     }
     section{
         grid-template-columns:repeat(3,4fr);
@@ -304,9 +324,12 @@ section{
     from {
         transform: rotate(0deg);
         scale: 0.9;
+        opacity: 0;
+
     }
     to{
         transform: rotate(180deg);
         scale: 1.2;
+        opacity: 1;
     }
 }
