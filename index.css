@@ -21,6 +21,7 @@ body{
     height: 9vh;
     position: sticky;
     top: 0px;
+    z-index: 2;
 }
 .TopNavMobile{
     display: none;
@@ -195,9 +196,18 @@ section{
     grid-row: 3 / 3;
     grid-column: 3 / 3;
 }
+.Link:hover, .changeL:hover{
+    animation: HoverEffect 0.5s;
+    scale: 1.5;
+    
+}
+.ProjectImg:hover{
+    scale: 1.05;
+}
 @media only screen and (max-width: 870px) {
     .TopNavBar{
         display: none;
+        z-index: 2;
     }
     .TopNavMobile{
         display: grid;
@@ -225,7 +235,7 @@ section{
         width: 100%;
         top: 50%;
         height: 40vh;
-        transform: translateY(0%);
+        transform: translateY(5%);
         opacity: 1;
         transition: all 1s ease;
     }
@@ -330,6 +340,17 @@ section{
     to{
         transform: rotate(180deg);
         scale: 1.2;
+        opacity: 1;
+    }
+}
+@keyframes HoverEffect {
+    0%{
+        scale: 1.0;
+        opacity: 0.7;
+        transform: translateY(-2.5px);
+    }
+    100%{
+        scale: 1.4;
         opacity: 1;
     }
 }
